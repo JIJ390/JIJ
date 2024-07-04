@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>계산기</title>
+</head>
+<body>
+  <div>
+    <div>
+      <button onclick="val1('1')">1</button>
+      <button onclick="val1('2')">2</button>
+      <button onclick="val1('3')">3</button>
+    </div>
+    <div>
+      <button onclick="val1('4')">4</button>
+      <button onclick="val1('5')">5</button>
+      <button onclick="val1('6')">6</button>
+    </div>
+    <div>
+      <button onclick="val1('7')">7</button>
+      <button onclick="val1('8')">8</button>
+      <button onclick="val1('9')">9</button>
+    </div>
+    <div>
+      <button onclick="val1('.')">.</button>
+      <button onclick="val1('0')">0</button>
+      <button onclick="val1('reset')">rst</button>
+    </div>
+    value : <span id = "result"></span>
+  </div>
+
+  <hr>
+
+  <div>
+    <div>
+      <button onclick="val2('1')">1</button>
+      <button onclick="val2('2')">2</button>
+      <button onclick="val2('3')">3</button>
+    </div>
+    <div>
+      <button onclick="val2('4')">4</button>
+      <button onclick="val2('5')">5</button>
+      <button onclick="val2('6')">6</button>
+    </div>
+    <div>
+      <button onclick="val2('7')">7</button>
+      <button onclick="val2('8')">8</button>
+      <button onclick="val2('9')">9</button>
+    </div>
+    <div>
+      <button onclick="val2('.')">.</button>
+      <button onclick="val2('0')">0</button>
+      <button onclick="val2('reset')">rst</button>
+    </div>
+    value : <span id = "result2"></span>
+  </div>
+  <div>
+    <button onclick="calc('+')">+</button>
+    <button onclick="calc('-')">-</button>
+    <button onclick="calc('*')">*</button>
+    <button onclick="calc('/')">/</button>
+    <button onclick="calc('%')">%</button>
+    <button onclick="calc('@')">@</button> <!-- @ : 앳(at) -->
+  </div>
+  <hr>
+  <h2>결과 : <span id="calcResult"></span></h2>
+
+  <script src="../js/0704계산기.js"></script>
+
+  
+<!-- 
+  배열을 생성하여 연산자가 눌리면 다음 배열에 value를 초기화 후 대입하도록
+  arr1에 대입되던 value가 arr2로 가도록??? 새로운 함수를 호출?
+  nextArr() 호출 배열과 value를 전역 변수로 둔 뒤에 
+  reset 하면 for문을 통해 배열 초기화 
+  함수 호출 필요 없이 case + : 뒤에 arr[i] i++로 두면 해결? 
+  문제는 plus를 기억하는 방법
+  문자열 형태의 연산자를 다시 연산자로 쓸수 있나?/-->
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+.account, .account * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid grey;
+  border-radius: 20px;
+  padding : 10px 30px;
+  width: 300px;
+  margin: auto;
+}
+
+button {
+  height: 50px;
+  width: 70px;
+  margin: 5px 0;
+  border : 5px solid black;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+button:hover {
+  color: white;
+  background-color: black;
+}
+
+.result {
+  width: 300px;
+}
+h1 {
+  height: 48px;
+  width: 100%;
+  display: flex;
+}
+
+#result {
+  flex-grow: 1;
+  text-align: right;
+  padding: 0 20px;
+  border-bottom: 3px solid grey;
+}
+

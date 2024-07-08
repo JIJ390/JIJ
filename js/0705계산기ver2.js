@@ -25,7 +25,7 @@ function calc(val) {
     case '-' : vPlus(); op[i] = '-'; vPlus(); result.innerText = '-'; return;
     case '*' : vPlus(); op[i] = '*'; vPlus(); result.innerText = '*'; return;
     case '/' : vPlus(); op[i] = '/'; vPlus(); result.innerText = '/'; return;
-    case '=' : value[i] = math(); break;
+    case '=' : math(); break;
     default : rst(); result.innerText = 0; return;
       
   }

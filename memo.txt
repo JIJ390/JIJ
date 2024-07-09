@@ -3,3 +3,5 @@ auto close tag
 intelli code
 
 js code snippets
+
+설정에 compact folders 해제

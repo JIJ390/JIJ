@@ -1,0 +1,179 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.containerA {
+  height: 500px;
+  margin: 100px auto;
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.containerA > div:nth-child(2) {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+
+}
+
+
+.user {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.com {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.user > div {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.user > div:first-child {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.com > div {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.com > div:first-child {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+[name=userScreen] {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+
+  background-image: url(../images/0710_가위바위보/가위L.png);
+  background-size: cover;
+  background-position: center;
+}
+
+[name=comScreen] {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+
+  background-image: url(../images/0710_가위바위보/가위R.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.user > div:not([name=userScreen]) {
+  height: 100px;
+}
+
+.com > div:not([name=comScreen]) {
+  height: 100px;
+}
+
+
+button {
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 10px;
+
+  font-weight: bold;
+  font-size: 20px;
+
+  width: 25%;
+  height: 50px;
+
+  transition-duration: 0.1s;
+}
+
+button:hover {
+  background-color: skyblue;
+}
+
+button:active {
+  opacity: 0.7;
+  width: 23%;
+  height: 43px;
+}
+
+#startBtn {
+  width: 60%;
+}
+#startBtn:active {
+  width: 55%;
+}
+
+
+/* ================ */
+
+.record {
+  width: 200px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  border-left: 1px solid black;
+  overflow: auto;
+}
+
+.record > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+
+  border: 2px solid black;
+  width: 180px;
+  height: 50px;
+  margin: 25px 0;
+
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+}
+
+span {
+  display: inline-block;
+  width: 45px;
+  text-align: center;
+}
+
+span:first-child {
+  font-weight: bold;
+}

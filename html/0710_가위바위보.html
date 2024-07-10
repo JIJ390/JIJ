@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0710_가위바위보</title>
+  <link rel="stylesheet" href="../css/0710_가위바위보.css">
+</head>
+<body>
+
+  <div class="containerA">
+    <div class="user">
+      <div>USER</div>
+      <div name="userScreen"></div>
+      <div>
+        <button name="rsp">가위</button>
+        <button name="rsp">바위</button>
+        <button name="rsp">보</button>
+      </div>
+    </div>
+    <div>VS</div>
+    <div class="com">
+      <div>COM</div>
+      <div name="comScreen"div></div>
+      <div><button id="startBtn">GAME START</button></div>
+    </div>
+    <div class="record">
+      <div>USER VS COM</div>
+      <table border="1">
+        <tr>
+          <td>승</td>
+          <td>무</td>
+          <td>패</td>
+        </tr>
+        <tr>
+          <td class="vsCheck">1</td>
+          <td class="vsCheck">1</td>
+          <td class="vsCheck">1</td>
+        </tr>
+      </table>
+      <ul id="result">
+        <li>
+          <span>WIN </span><span>가위 </span><span>VS </span><span>보 </span>
+        </li>
+        <li>
+          <span>DRAW </span><span>보 </span><span>VS </span><span>보 </span>
+        </li>
+        <li>
+          <span>LOSE </span><span>바위 </span><span>VS </span><span>보 </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  
+
+  <script src="../js/0710_가위바위보.js"></script>
+</body>
+</html>

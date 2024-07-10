@@ -1,0 +1,46 @@
+.table {
+  margin: auto;
+}
+
+.table > * {
+  text-align: center;
+}
+
+tr > td:first-child {
+  font-weight: bold;
+  width: 100px;
+  height: 60px;
+}
+
+tr > td:nth-child(3) {
+  font-weight: bold;
+  width: 100px;
+}
+
+tr > td:nth-child(2) {
+  text-align: left;
+}
+
+tr > td:last-child {
+  text-align: left;
+}
+
+tr:last-child > td:last-child {
+  text-align: center;
+}
+
+.size {
+  width: 50%;
+}
+
+.boxImage {
+  width: 100%;
+}
+
+.box {
+  border: 3px solid black;
+  width: 100px;
+  height: 100px;
+  margin: 30px auto;
+  display: flex;
+}

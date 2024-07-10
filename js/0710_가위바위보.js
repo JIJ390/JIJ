@@ -71,12 +71,7 @@ userList[2].addEventListener('click', function() {
   count++;
 });
 
-
-
-
-
 //==========================================
-
 
 function rspGame(x) {
   const comRsp = Math.floor(Math.random()*3);
@@ -90,43 +85,36 @@ function rspGame(x) {
   }
 
   if (x === comRsp) {
-    console.log('draw');
     index = 1;
     vsCount++;
   } else if (x === 0 && comRsp === 1) {
-    console.log('lose');
     index = 2;
     loseCount++;
   } else if (x === 0 && comRsp === 2) {
-    console.log('win');
     index = 0;
     winCount++;
   } else if (x === 1 && comRsp === 2) {
-    console.log('lose');
     index = 2;
     loseCount++;
   } else if (x === 1 && comRsp === 0) {
-    console.log('win');
     index = 0;
     winCount++;
   } else if (x === 2 && comRsp === 0) {
-    console.log('lose');
     index = 2;
     loseCount++;
   } else if (x === 2 && comRsp === 1) {
-    console.log('win');
     index = 0;
     winCount++;
   }
+
   vsCheck[0].innerText = `${winCount}`;
   vsCheck[1].innerText = `${vsCount}`;
   vsCheck[2].innerText = `${loseCount}`;
 
-  str += `<li><span>${vsList[index]} </span><span>${rspList[x]} </span><span>VS </span><span>${rspList[comRsp]} </span></li>`;
+  str += `<li><span class="${vsList[index].toLowerCase()}">${vsList[index]} </span><span>${rspList[x]} </span><span>VS </span><span>${rspList[comRsp]} </span></li>`;
 }
 
 function tryCheck() {
-
   if (maxTryNumb === 0) {
     alert('GAME START 를 눌러주세요');
     return 'over';

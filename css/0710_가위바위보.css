@@ -177,3 +177,15 @@ span {
 span:first-child {
   font-weight: bold;
 }
+
+.win {
+  color: green;
+}
+
+.draw {
+  color: blue;
+}
+
+.lose {
+  color: red;
+}

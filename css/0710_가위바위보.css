@@ -13,57 +13,57 @@
   justify-content: center;
 
 }
-
 .containerA > div:nth-child(2) {
   width: 50px;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-weight: bold;
   font-size: 24px;
-
 }
 
 
 .user {
   width: 350px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-
 .com {
   width: 350px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-
 .user > div {
   width: 300px;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-
 .user > div:first-child {
   font-weight: bold;
   font-size: 24px;
 }
-
 .com > div {
   width: 300px;
+
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-
 .com > div:first-child {
   font-weight: bold;
   font-size: 24px;
 }
+
 
 [name=userScreen] {
   width: 300px;
@@ -74,7 +74,6 @@
   background-size: cover;
   background-position: center;
 }
-
 [name=comScreen] {
   width: 300px;
   height: 300px;
@@ -84,11 +83,9 @@
   background-size: cover;
   background-position: center;
 }
-
 .user > div:not([name=userScreen]) {
   height: 100px;
 }
-
 .com > div:not([name=comScreen]) {
   height: 100px;
 }
@@ -105,21 +102,22 @@ button {
   width: 25%;
   height: 50px;
 
+  user-select : none;
   transition-duration: 0.1s;
 }
-
 button:hover {
-  background-color: skyblue;
+  background-color: paleturquoise;
 }
-
 button:active {
   opacity: 0.7;
   width: 23%;
   height: 43px;
 }
-
 #startBtn {
   width: 60%;
+}
+#startBtn:hover {
+  background-color: palevioletred;
 }
 #startBtn:active {
   width: 55%;
@@ -139,7 +137,6 @@ button:active {
   border-left: 1px solid black;
   overflow: auto;
 }
-
 .record > div {
   display: flex;
   align-items: center;
@@ -156,7 +153,6 @@ button:active {
 table {
   border-collapse: collapse;
 }
-
 td {
   width: 60px;
   height: 20px;
@@ -167,25 +163,16 @@ td {
 ul {
   list-style-type: none;
 }
-
 span {
   display: inline-block;
   width: 45px;
   text-align: center;
 }
-
 span:first-child {
   font-weight: bold;
 }
+.win {color: green;}
 
-.win {
-  color: green;
-}
+.draw {color: blue;}
 
-.draw {
-  color: blue;
-}
-
-.lose {
-  color: red;
-}
+.lose {color: red;}

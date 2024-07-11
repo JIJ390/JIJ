@@ -4,7 +4,6 @@ const play = document.querySelector('#play');
 var checkList = [2,2,2,2,2,2,2,2,2,2,2,2];
 var count = 0;
 
-
 play.addEventListener('click', function() {
 
   if (count === numbList.length) {
@@ -34,54 +33,11 @@ play.addEventListener('click', function() {
 });
 
 
-numbList[0].addEventListener('click', function() {
-  reverse(0);
-});
-
-numbList[1].addEventListener('click', function() {
-  reverse(1);
-});
-
-numbList[2].addEventListener('click', function() {
-  reverse(2);
-});
-
-numbList[3].addEventListener('click', function() {
-  reverse(3);
-});
-
-numbList[4].addEventListener('click', function() {
-  reverse(4);
-});
-
-numbList[5].addEventListener('click', function() {
-  reverse(5);
-});
-
-numbList[6].addEventListener('click', function() {
-  reverse(6);
-});
-
-numbList[7].addEventListener('click', function() {
-  reverse(7);
-});
-
-numbList[8].addEventListener('click', function() {
-  reverse(8);
-});
-
-numbList[9].addEventListener('click', function() {
-  reverse(9);
-});
-
-numbList[10].addEventListener('click', function() {
-  reverse(10);
-});
-
-numbList[11].addEventListener('click', function() {
-  reverse(11);
-});
-
+for(let i = 0; i < 12; i ++) {  //함수가 12번 돌아가는게 아니라 12 번 함수를 선언 한다고 이해
+  numbList[i].addEventListener('click', function() {
+    reverse(i);
+  });
+}
 
 function reverse(x) {
   if (checkList[x] === 2) return;

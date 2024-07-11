@@ -1,10 +1,10 @@
 const userList = document.querySelectorAll('[name=rsp]');
-
+// 사용자 가위바위보 선택 배열
 const userImage = document.querySelector('[name=userScreen]');
 const comImage = document.querySelector('[name=comScreen]');
 
 const vsCheck = document.querySelectorAll('.vsCheck');
-
+// 승패 확인 배열
 const result = document.querySelector('#result');
 const record = document.querySelector('.record');
 
@@ -12,10 +12,10 @@ const start = document.querySelector('#startBtn');
 
 var str ='';
 
-var rspValue;
+var rspValue; // 가위 : 0, 바위 : 1. 보 : 1
 
 var winCount = 1;
-var vsCount = 1;
+var drawCount = 1;
 var loseCount = 1;
 
 var maxTryNumb = 0;
@@ -23,7 +23,6 @@ var count = 0;
 
 const rspList = ['가위', '바위', '보'];
 const vsList = ['WIN', 'DRAW', 'LOSE'];
-
 
 
 start.addEventListener('click', function() {
@@ -37,41 +36,24 @@ start.addEventListener('click', function() {
 
   count = 0;
   winCount = 0;
-  vsCount = 0;
+  drawCount = 0;
   loseCount = 0;
   str = '';
 
   tryCheck();
 });
 
-userList[0].addEventListener('click', function() {
-  rspValue = 0;
-  if (tryCheck() === 'over') return;
-  rspGame(rspValue);
-  printResult();
-  userImage.style.backgroundImage = `url('../images/0710_가위바위보/가위L.png')`;
-  count++;
-});
+for (let i = 0; i < userList.length; i++) {
+  userList[i].addEventListener('click', function() {
+    rspValue = i;
+    if (tryCheck() === 'over') return;
+    rspGame(rspValue);
+    printResult();
+    userImage.style.backgroundImage = `url('../images/0710_가위바위보/${rspList[i]}L.png')`;
+    count++;
+  });
+}
 
-userList[1].addEventListener('click', function() {
-  rspValue = 1;
-  if (tryCheck() === 'over') return;
-  rspGame(rspValue);
-  printResult();
-  userImage.style.backgroundImage = `url('../images/0710_가위바위보/바위L.png')`;
-  count++;
-});
-
-userList[2].addEventListener('click', function() {
-  rspValue = 2;
-  if (tryCheck() === 'over') return;
-  rspGame(rspValue);
-  printResult();
-  userImage.style.backgroundImage = `url('../images/0710_가위바위보/보L.png')`;
-  count++;
-});
-
-//==========================================
 
 function rspGame(x) {
   const comRsp = Math.floor(Math.random()*3);
@@ -86,32 +68,20 @@ function rspGame(x) {
 
   if (x === comRsp) {
     index = 1;
-    vsCount++;
-  } else if (x === 0 && comRsp === 1) {
+    drawCount++;
+  } else if ((x === 0 && comRsp === 1) || (x === 1 && comRsp === 2) || (x === 2 && comRsp === 0)) {
     index = 2;
     loseCount++;
-  } else if (x === 0 && comRsp === 2) {
+  } else if ((x === 0 && comRsp === 2) || (x === 1 && comRsp === 0) || (x === 2 && comRsp === 1)) {
     index = 0;
     winCount++;
-  } else if (x === 1 && comRsp === 2) {
-    index = 2;
-    loseCount++;
-  } else if (x === 1 && comRsp === 0) {
-    index = 0;
-    winCount++;
-  } else if (x === 2 && comRsp === 0) {
-    index = 2;
-    loseCount++;
-  } else if (x === 2 && comRsp === 1) {
-    index = 0;
-    winCount++;
-  }
-
+  } 
+  
   vsCheck[0].innerText = `${winCount}`;
-  vsCheck[1].innerText = `${vsCount}`;
+  vsCheck[1].innerText = `${drawCount}`;
   vsCheck[2].innerText = `${loseCount}`;
 
-  str += `<li><span class="${vsList[index].toLowerCase()}">${vsList[index]} </span><span>${rspList[x]} </span><span>VS </span><span>${rspList[comRsp]} </span></li>`;
+  str += `<li><span class="${vsList[index].toLowerCase()}">${vsList[index]}</span><span>${rspList[x]}</span><span>VS</span><span>${rspList[comRsp]}</span></li>`;
 }
 
 function tryCheck() {

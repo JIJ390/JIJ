@@ -1,7 +1,7 @@
 const bigbox = document.querySelector('.bigBox');
 const keyList = document.querySelectorAll('.keyArrow');
 
-document.addEventListener('keydown', function(e){
+document.addEventListener('keydown', e => {
 
   let index;
 
@@ -37,7 +37,7 @@ document.addEventListener('keydown', function(e){
 });
 
 
-document.addEventListener('keyup', function(e){
+document.addEventListener('keyup', e => {
   let index;  
   switch (e.key.toLowerCase()) {
     case 'w' : index = 0; break;

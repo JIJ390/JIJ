@@ -12,7 +12,7 @@ const start = document.querySelector('#startBtn');
 
 var str ='';
 
-var rspValue; // 가위 : 0, 바위 : 1. 보 : 1
+var rspValue; // 가위 : 0, 바위 : 1. 보 : 2
 
 var winCount = 1;
 var drawCount = 1;
@@ -25,7 +25,7 @@ const rspList = ['가위', '바위', '보'];
 const vsList = ['WIN', 'DRAW', 'LOSE'];
 
 
-start.addEventListener('click', function() {
+start.addEventListener('click', () => {
   maxTryNumb = prompt('시도 횟수를 입력하세요');
 
   if(maxTryNumb === null || isNaN(Number(maxTryNumb))){
@@ -44,7 +44,7 @@ start.addEventListener('click', function() {
 });
 
 for (let i = 0; i < userList.length; i++) {
-  userList[i].addEventListener('click', function() {
+  userList[i].addEventListener('click', () => {
     rspValue = i;
     if (tryCheck() === 'over') return;
     rspGame(rspValue);
@@ -55,7 +55,7 @@ for (let i = 0; i < userList.length; i++) {
 }
 
 
-function rspGame(x) {
+const rspGame = x => {
   const comRsp = Math.floor(Math.random()*3);
   let index;
 
@@ -84,7 +84,7 @@ function rspGame(x) {
   str += `<li><span class="${vsList[index].toLowerCase()}">${vsList[index]}</span><span>${rspList[x]}</span><span>VS</span><span>${rspList[comRsp]}</span></li>`;
 }
 
-function tryCheck() {
+const tryCheck = () => {
   if (maxTryNumb === 0) {
     alert('GAME START 를 눌러주세요');
     return 'over';
@@ -98,7 +98,7 @@ function tryCheck() {
   }
 }
 
-function printResult() {
+const printResult = () => {
   result.innerHTML = str;
   record.scrollTop = record.scrollHeight; 
 }

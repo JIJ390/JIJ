@@ -5,3 +5,7 @@ intelli code
 js code snippets
 
 설정에 compact folders 해제
+
+color theme pastel retta
+
+템플릿 등록 so

@@ -8,4 +8,11 @@ js code snippets
 
 color theme pastel retta
 
+java > editor > templete
 템플릿 등록 so
+
+synthwave 84
+
+-Dswt.enable.autoScale=true
+-Dswt.autoScale=150
+-Dswt.autoScale.method=nearest

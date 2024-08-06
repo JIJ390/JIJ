@@ -16,3 +16,14 @@ synthwave 84
 -Dswt.enable.autoScale=true
 -Dswt.autoScale=150
 -Dswt.autoScale.method=nearest
+
+
+
+GENERAL> SHOW HEAP STATUS
+GENERAL> WORK SPACE > REFRESH USING NAIVE HOOK
+font> textfont> d2coding
+
+runtime envirments > apache 10.1 > browse 톰캣 선택
+
+
+#8e95fa

@@ -27,3 +27,52 @@ runtime envirments > apache 10.1 > browse 톰캣 선택
 
 
 #8e95fa
+
+
+JSTL Snippets 설치
+JSP Language Support 설치
+
+snippets : jsp
+
+{
+	"jsp": {
+		"prefix": "jsp",
+		"body": [
+			"<%@ page language=\"java\" contentType=\"text/html; charset=UTF-8\" pageEncoding=\"UTF-8\"%>",
+			"<!DOCTYPE html>",
+			"<html lang=\"ko\">",
+			"<head>",
+			"\t<meta charset=\"UTF-8\">",
+			"\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+			"\t<title>html문서 제목</title>",
+			"</head>",
+			"<body>",
+			"\t$1",
+			"</body>",
+			"</html>"
+		],
+		"description": "html 기본 태그 작성"
+	},
+	"core:jstl": {
+		"prefix": "core",
+		"body": [
+			"<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\"%>"
+		],
+		"description": "JSTL core(중요 구문 제공) 추가"
+	},
+	"fn:jstl": {
+		"prefix": "fn",
+		"body": [
+			"<%@ taglib prefix=\"fn\" uri=\"http://java.sun.com/jsp/jstl/functions\"%>"
+		],
+		"description": "JSTL function(문자열 관련 함수 제공) 추가"
+	},
+	"fmt:jstl": {
+		"prefix": "fmt",
+		"body": [
+			"<%@ taglib prefix=\"fmt\" uri=\"http://java.sun.com/jsp/jstl/fmt\"%>"
+		],
+		"description": "JSTL formmat(숫자, 날짜 형식 제공) 추가"
+	}
+}
+

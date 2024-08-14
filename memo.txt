@@ -76,3 +76,26 @@ snippets : jsp
 	}
 }
 
+설치 위치는 자유롭지만 기억해둘것!
+비밀번호 oracle!
+
+cmd : sqlplus
+사용자 > sys as sysdba
+SQL > SELECT USERNAME FROM ALL_USERS;
+
+
+[디비버 설정]
+
+설정 > 일반 : heap
+
+설정 > 일반 > 작업공간 : refresh hook
+
+연결 > 연결 유형 : 오토 커밋 해제
+
+편집기 > sql 편집기 > sql 실행 : blank line never
+
+문서편집기 : tap 2 , 행번호 표시 체크
+
+유저 인터페이스 > 모양 :
+
+도움말 > install > dev 다운!!

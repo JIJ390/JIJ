@@ -102,6 +102,7 @@ SQL > SELECT USERNAME FROM ALL_USERS;
 
 ==================================
 html.json
+
 {
 	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
 	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
@@ -132,6 +133,7 @@ Thymeleaf Navigation
 
 
 jsp.json
+
 {
 	"jsp": {
 		"prefix": "jsp",
@@ -182,6 +184,7 @@ jsp.json
 HTML to CSS autocompletion
 
 IntelliCode
+
 IntelliCode API Usage Examples
 
 JavaScript (ES6) code snippets

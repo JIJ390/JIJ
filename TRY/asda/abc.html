@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <canvas id="myChart" width="950px" height="500px"></canvas>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+      const ctx = document.getElementById('myChart').getContext('2d');
+
+      const verticalLinePlugin = {
+    id: 'verticalLinePlugin',
+    afterDraw: (chart) => {
+        const ctx = chart.ctx;
+        const xScale = chart.scales.x;
+        const yScale = chart.scales.y;
+
+        chart.data.datasets[0].data.forEach((value, index) => {
+            if (value !== undefined) { // 비어 있지 않은 데이터만 처리
+                const x = xScale.getPixelForValue(index);
+                const y = yScale.getPixelForValue(value);
+
+                ctx.save();
+                ctx.setLineDash([5, 5]); // 점선 설정 (5px 선, 5px 간격)
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.5)'; // 점선 색상 (반투명 검정)
+                ctx.beginPath();
+                ctx.moveTo(x, yScale.getPixelForValue(yScale.min));
+                ctx.lineTo(x, y);
+                ctx.stroke();
+                ctx.restore();
+            }
+        });
+    }
+};
+
+const labels = ['', '1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월', ''];
+const totalSales = [null, 1000, 1200, 1400, 1600, 1800, 2000, 2200, 2400, 2600, 2800, 3000, 3200, null]; // 총 매매 비용
+const totalPurchase = [null, -500, -600, -700, -800, -900, -1000, -1100, -1200, -1300, -1400, -1500, -1600, null]; // 총 매입 비용
+const netProfit = totalSales.map((sale, i) => sale + totalPurchase[i]); // 순수익 계산
+
+const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [
+            {
+                label: '총 매매 비용',
+                data: totalSales,
+                borderColor: 'rgba(29, 29, 31, 1)',
+                backgroundColor: 'rgba(29, 29, 31, 0.1)',
+                fill: false,
+                tension: 0.1,
+                pointRadius: 3
+            },
+            {
+                label: '총 매입 비용',
+                data: totalPurchase,
+                borderColor: 'rgba(255, 99, 132, 1)',
+                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                fill: false,
+                tension: 0.1,
+                pointRadius: 3
+            },
+            {
+                label: '순수익',
+                data: netProfit,
+                borderColor: 'rgba(75, 192, 192, 1)',
+                backgroundColor: 'rgba(75, 192, 192, 0.1)',
+                fill: false,
+                tension: 0.1,
+                pointRadius: 3
+            }
+        ]
+    },
+    options: {
+        responsive: false,
+        scales: {
+            x: {
+                grid: {
+                    display: false
+                },
+                ticks: {
+                    color: 'black'
+                },
+                border: {
+                    display: true,
+                    color: 'black'
+                }
+            },
+            y: {
+                beginAtZero: true,
+                grid: {
+                    display: true, // y축의 격자선을 표시
+                    color: (context) => context.tick.value === 0 ? 'black' : 'rgba(0, 0, 0, 0.1)', // y=0 기준선을 강조
+                    lineWidth: (context) => context.tick.value === 0 ? 1 : 1 // y=0 기준선의 두께 조절
+                },
+                ticks: {
+                    callback: function (value) {
+                        return value.toLocaleString(); // 천 단위 구분 기호
+                    },
+                    color: 'black'
+                },
+                border: {
+                    display: true,
+                    color: 'black'
+                }
+            }
+        },
+        plugins: {
+            legend: {
+                display: true // 상단의 데이터셋 라벨 표시
+            }
+        }
+    },
+    plugins: [verticalLinePlugin]
+});
+
+
+
+  </script>
+
+
+</body>
+
+</html>
